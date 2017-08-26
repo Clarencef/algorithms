@@ -1,4 +1,5 @@
 import FizzBuzz from './fizzbuzz';
+import harmlessRandomNote from './harmlessRandomNote';
 export default class BinarySearch {
 
   constructor() {
@@ -243,7 +244,10 @@ console.log(est.toArray());
 console.log(est.toArray().toString());
 
 window.onload = function () {
-  const fizzBuzzInfo = FizzBuzz() || '請輸入一個數字';
+  const fizzBuzzInfo = FizzBuzz(20) || '請輸入一個數字';
+  const fizzBuzzBlock = document.getElementById('fizzBuzzBlock');
+  const harmlessRandomNoteBlock = document.getElementById('harmlessRandomNoteBlock');
 
-  document.body.innerHTML = fizzBuzzInfo;
+  fizzBuzzBlock.innerHTML = '<h2>FizzBuzzBlock</h2>' + fizzBuzzInfo;
+  harmlessRandomNoteBlock.innerHTML = harmlessRandomNote('this is this', 'this is the text of the note');
 };
