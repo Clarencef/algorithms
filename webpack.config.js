@@ -3,26 +3,23 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var path = require('path');
 var env = require('yargs').argv.mode;
 
-var libraryName = 'binarySearch';
-
-var plugins = [], outputFile;
+var plugins = [];
 
 if (env === 'build') {
   plugins.push(new UglifyJsPlugin({ minimize: true }));
-  outputFile = libraryName + '.min.js';
+  // outputFile = libraryName + '.min.js';
 } else {
-  outputFile = libraryName + '.js';
+  // outputFile = libraryName + '.js';
 }
 
 var config = {
-  entry: __dirname + '/src/index.js',
+  entry: {
+    algorithms: './src/index.js',
+  },
   devtool: 'source-map',
   output: {
     path: __dirname + '/lib',
-    filename: outputFile,
-    library: libraryName,
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    filename: '[name].js',
   },
   module: {
     loaders: [

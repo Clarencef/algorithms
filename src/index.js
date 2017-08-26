@@ -1,13 +1,13 @@
+import FizzBuzz from './fizzbuzz';
 export default class BinarySearch {
 
   constructor() {
-      this._root = null;
-    }
-    // 先序遍歷：遍歷順序是：根、左子樹、右子樹。 
-    // 傳入的process 是一個必須節點內執行的function
+    this._root = null;
+  }
+  // 先序遍歷：遍歷順序是：根、左子樹、右子樹。
+  // 傳入的process 是一個必須節點內執行的function
   traverse(process) {
-
-    //用來recursive traverse每個節點的 helper function 
+    // 用來recursive traverse每個節點的 helper function
     function inOrder(node) {
       if (node) {
         if (node.left !== null) {
@@ -34,6 +34,7 @@ export default class BinarySearch {
       },
       // 用來作為遍歷節點的當前節點
       current;
+
     if (this._root === null) {
       this._root = node;
     } else {
@@ -49,9 +50,8 @@ export default class BinarySearch {
             // 設定當前節點的左節點為當前節點，並繼續進行loop
             current = current.left;
           }
-        }
-        // 如果傳入的value小於當前節點的值，往當前節點的左邊節點尋找
-        else if (value > current.value) {
+        } else if (value > current.value) {
+          // 如果傳入的value小於當前節點的值，往當前節點的左邊節點尋找
           if (current.right === null) {
             current.right = node;
             break;
@@ -73,7 +73,7 @@ export default class BinarySearch {
       childCount,
       replacementParent,
       replacement;
-    
+
     while (!found && current) {
 
       if (value < current.value) {
@@ -99,7 +99,7 @@ export default class BinarySearch {
             break;
           case 2:
             replacement = this._root.left;
-            //選出左分支最大的值
+            // 選出左分支最大的值
             while (replacement.right !== null) {
               replacementParent = replacement;
               replacement = replacement.right;
@@ -107,19 +107,19 @@ export default class BinarySearch {
 
             if (replacementParent !== null) {
 
-              //將左分支最大的值從原來的位置移除
+              // 將左分支最大的值從原來的位置移除
               replacementParent.right = replacement.left;
 
-              //將左分支最大的值作為root node，
-              //原root node的左右子節點設為新root node 左右子節
+              // 將左分支最大的值作為root node，
+              // 原root node的左右子節點設為新root node 左右子節
               replacement.right = this._root.right;
               replacement.left = this._root.left;
             } else {
-              //左分支因this._root.left沒有子節點而消失
+              // 左分支因this._root.left沒有子節點而消失
               replacement.right = this._root.right;
             }
 
-            //將replacement設為新root node
+            // 將replacement設為新root node
             this._root = replacement;
             break;
           default:
@@ -142,11 +142,11 @@ export default class BinarySearch {
             };
             break;
           case 2:
-            //將current左子節點設為取代節點，current = replacementParent
+            // 將current左子節點設為取代節點，current = replacementParent
             replacement = current.left;
             replacementParent = current;
 
-            //選出左分支最大的值
+            // 選出左分支最大的值
             while (replacement.right !== null) {
               replacementParent = replacement;
               replacement = replacement.right;
@@ -196,7 +196,7 @@ export default class BinarySearch {
   size() {
     let length = 0;
 
-    this.traverse(function(node) {
+    this.traverse(function (node) {
       length++;
     });
 
@@ -206,7 +206,7 @@ export default class BinarySearch {
   toArray() {
     let result = [];
 
-    this.traverse(function(node) {
+    this.traverse(function (node) {
       result.push(node.value);
     });
 
@@ -217,7 +217,33 @@ export default class BinarySearch {
     return this.toArray.toString();
   }
 
-    myconsole () {
-  	console.log(this._root);
-  } 
+  myconsole() {
+    console.log(this._root);
+  }
+};
+
+let est = new BinarySearch();
+
+est.add(55);
+est.add(67);
+est.add(10);
+est.add(29);
+est.add(40);
+est.add(5);
+est.add(16);
+est.add(25);
+est.add(2);
+est.add(1);
+est.add(3);
+console.log(est.size());
+console.log(est.contains(10));
+est.myconsole();
+est.remove(16);
+console.log(est.toArray());
+console.log(est.toArray().toString());
+
+window.onload = function () {
+  const fizzBuzzInfo = FizzBuzz() || '請輸入一個數字';
+
+  document.body.innerHTML = fizzBuzzInfo;
 };
