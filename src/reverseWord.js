@@ -6,5 +6,8 @@ export default function reverseWord(str) {
     reversedStrArr.unshift(word);
   });
 
-  return reversedStrArr.join('');
+  return {
+    origin: str,
+    reversed: reversedStrArr.join('')
+  };
 };
