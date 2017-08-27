@@ -1,5 +1,6 @@
 import FizzBuzz from './fizzbuzz';
 import harmlessRandomNote from './harmlessRandomNote';
+import isPalindrome from './isPalindrome';
 export default class BinarySearch {
 
   constructor() {
@@ -246,8 +247,12 @@ console.log(est.toArray().toString());
 window.onload = function () {
   const fizzBuzzInfo = FizzBuzz(20) || '請輸入一個數字';
   const fizzBuzzBlock = document.getElementById('fizzBuzzBlock');
-  const harmlessRandomNoteBlock = document.getElementById('harmlessRandomNoteBlock');
+  const harmlessRandomNoteBlock = document.getElementById('harmlessRandomNote');
+  const ispalindromeBlock = document.getElementById('ispalindrome');
+
+  console.log(isPalindrome("Madam I'm Adam"));
 
   fizzBuzzBlock.innerHTML = '<h2>FizzBuzzBlock</h2>' + fizzBuzzInfo;
-  harmlessRandomNoteBlock.innerHTML = harmlessRandomNote('this is this', 'this is the text of the note');
+  harmlessRandomNoteBlock.innerHTML = '<h2>HarmlessRandomNote</h2>' + harmlessRandomNote('this is this', 'this is the text of the note');
+  ispalindromeBlock.innerHTML = '<h2>IsPalindrome</h2>' + isPalindrome("Madam I'm Adam");
 };
