@@ -2,6 +2,7 @@ import FizzBuzz from './fizzbuzz';
 import harmlessRandomNote from './harmlessRandomNote';
 import isPalindrome from './isPalindrome';
 import caesarCipher from './caesarCipher';
+import reverseWord from './reverseWord';
 
 export default class BinarySearch {
 
@@ -253,11 +254,12 @@ window.onload = function () {
   const ispalindromeBlock = document.getElementById('ispalindrome');
   const caesarCipherBlock = document.getElementById('caesarCipher');
   const caesarCipherArr = [
-    caesarCipher("Zoo Keeper", 2),
-    caesarCipher("Big Car", -16),
-    caesarCipher("Javascript", -900),
+    caesarCipher('Zoo Keeper', 2),
+    caesarCipher('Big Car', -16),
+    caesarCipher('Javascript', -900)
   ];
 
+  console.log(reverseWord('this is a test string'));
   fizzBuzzBlock.innerHTML = '<h2>FizzBuzzBlock</h2>' + fizzBuzzInfo;
   harmlessRandomNoteBlock.innerHTML = '<h2>HarmlessRandomNote</h2>' + harmlessRandomNote('this is this', 'this is the text of the note');
   ispalindromeBlock.innerHTML = '<h2>IsPalindrome</h2>' + isPalindrome("Madam I'm Adam");
