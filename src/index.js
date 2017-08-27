@@ -1,6 +1,8 @@
 import FizzBuzz from './fizzbuzz';
 import harmlessRandomNote from './harmlessRandomNote';
 import isPalindrome from './isPalindrome';
+import caesarCipher from './caesarCipher';
+
 export default class BinarySearch {
 
   constructor() {
@@ -249,10 +251,15 @@ window.onload = function () {
   const fizzBuzzBlock = document.getElementById('fizzBuzzBlock');
   const harmlessRandomNoteBlock = document.getElementById('harmlessRandomNote');
   const ispalindromeBlock = document.getElementById('ispalindrome');
-
-  console.log(isPalindrome("Madam I'm Adam"));
+  const caesarCipherBlock = document.getElementById('caesarCipher');
+  const caesarCipherArr = [
+    caesarCipher("Zoo Keeper", 2),
+    caesarCipher("Big Car", -16),
+    caesarCipher("Javascript", -900),
+  ];
 
   fizzBuzzBlock.innerHTML = '<h2>FizzBuzzBlock</h2>' + fizzBuzzInfo;
   harmlessRandomNoteBlock.innerHTML = '<h2>HarmlessRandomNote</h2>' + harmlessRandomNote('this is this', 'this is the text of the note');
   ispalindromeBlock.innerHTML = '<h2>IsPalindrome</h2>' + isPalindrome("Madam I'm Adam");
+  caesarCipherBlock.innerHTML = '<h2>CaesarCipher</h2>' + caesarCipherArr.join('<br>');
 };
