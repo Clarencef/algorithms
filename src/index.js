@@ -8,6 +8,7 @@ import meanMedianMode from './meanMedianMode';
 import twoSum from './twosum';
 import BinarySearchTree from './binarySearchTree';
 import binarySearch from './binarySearch';
+import {fibonacci, fibMemo} from './fibonacci';
 
 let est = new BinarySearchTree();
 
@@ -39,8 +40,11 @@ window.onload = function () {
   const reversedArrayInPlaceBlock = document.getElementById('reversedArrayInPlace');
   const meanMedianModeBlock = document.getElementById('meanMedianMode');
   const twoSumBlock = document.getElementById('twoSum');
+  const binarysearchBlock = document.getElementById('binarysearch');
   const meanMedianModeArr = [32, 4, 2, 5, 44, 55, 55, 4, 1, 46];
   const twoSumArr = [40, 11, 19, 17, -12];
+  const binarySearchArr = [1, 3, 5, 7, 9, 11, 45, 55, 65, 77, 89];
+  const binarySearchKey = 77;
   const twoSumExpect = 28;
   const twoSumResult = twoSum(twoSumArr, twoSumExpect).map((item) => {
     return '[' + item.join(', ') + ']';
@@ -56,8 +60,6 @@ window.onload = function () {
     caesarCipher('Javascript', -900)
   ];
 
-  console.log(binarySearch([5, 7, 13, 16, 34, 42, 56, 78, 101], 42));
-
   fizzBuzzBlock.innerHTML = '<h2>FizzBuzzBlock</h2>' + fizzBuzzInfo;
   harmlessRandomNoteBlock.innerHTML = '<h2>HarmlessRandomNote</h2>' + harmlessRandomNote('this is this', 'this is the text of the note');
   ispalindromeBlock.innerHTML = '<h2>IsPalindrome</h2>' + isPalindrome("Madam I'm Adam");
@@ -70,4 +72,10 @@ window.onload = function () {
   'Mode: ' + meanMedianModeObj.Mode.join(', ');
   twoSumBlock.innerHTML = '<h2>two sum</h2>' + 'Array: [' + twoSumArr.join(', ') + '] Expect sum:' + twoSumExpect +'<br/>' +
   'result: [' + twoSumResult.join(', ') + ']';
+  twoSumBlock.innerHTML = '<h2>two sum</h2>' + 'Array: [' + twoSumArr.join(', ') + '] Expect sum:' + twoSumExpect +'<br/>' +
+  'result: [' + twoSumResult.join(', ') + ']';
+  binarysearchBlock.innerHTML = '<h2>binary search</h2>' + 'Array: [' + binarySearchArr.join(', ') + '] <br/>' +
+  'result: ' + binarySearch(binarySearchArr, binarySearchKey);
+  console.log(fibonacci(12));
+  console.log(fibMemo(8));
 };
