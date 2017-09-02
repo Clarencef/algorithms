@@ -5,6 +5,7 @@ import caesarCipher from './caesarCipher';
 import reverseWord from './reverseWord';
 import reversedArrayInPlace from './reversedArrayInPlace';
 import meanMedianMode from './meanMedianMode';
+import twoSum from './twosum';
 
 export default class BinarySearch {
 
@@ -258,7 +259,13 @@ window.onload = function () {
   const reversedWordBlock = document.getElementById('reversedWord');
   const reversedArrayInPlaceBlock = document.getElementById('reversedArrayInPlace');
   const meanMedianModeBlock = document.getElementById('meanMedianMode');
+  const twoSumBlock = document.getElementById('twoSum');
   const meanMedianModeArr = [32, 4, 2, 5, 44, 55, 55, 4, 1, 46];
+  const twoSumArr = [40, 11, 19, 17, -12];
+  const twoSumExpect = 28;
+  const twoSumResult = twoSum(twoSumArr, twoSumExpect).map((item) => {
+    return '[' + item.join(', ') + ']';
+  });
   const meanMedianModeObj = meanMedianMode(meanMedianModeArr);
   const {
     origin,
@@ -270,6 +277,8 @@ window.onload = function () {
     caesarCipher('Javascript', -900)
   ];
 
+  console.log(twoSumResult);
+
   fizzBuzzBlock.innerHTML = '<h2>FizzBuzzBlock</h2>' + fizzBuzzInfo;
   harmlessRandomNoteBlock.innerHTML = '<h2>HarmlessRandomNote</h2>' + harmlessRandomNote('this is this', 'this is the text of the note');
   ispalindromeBlock.innerHTML = '<h2>IsPalindrome</h2>' + isPalindrome("Madam I'm Adam");
@@ -280,4 +289,6 @@ window.onload = function () {
   'Mean: ' + meanMedianModeObj.Mean + '<br/>' +
   'Median: ' + meanMedianModeObj.Median + '<br/>' +
   'Mode: ' + meanMedianModeObj.Mode.join(', ');
+  twoSumBlock.innerHTML = '<h2>two sum</h2>' + 'Array: [' + twoSumArr.join(', ') + '] Expect sum:' + twoSumExpect +'<br/>' +
+  'result: [' + twoSumResult.join(', ') + ']';
 };
