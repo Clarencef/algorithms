@@ -1,4 +1,4 @@
-export default function harmlessRandomNote(noteTxt, magazineTxt) {
+export default function harmlessRansomNote(noteTxt, magazineTxt) {
   let compareObj = {};
   let noteTxtArr = noteTxt.split(' ');
   let MagazineTxtArr = magazineTxt.split(' ');
@@ -18,3 +18,5 @@ export default function harmlessRandomNote(noteTxt, magazineTxt) {
   });
   return noteIsPossible;
 };
+
+export const ransomNoteAnswer = harmlessRansomNote('this is this', 'this is the text of the note');

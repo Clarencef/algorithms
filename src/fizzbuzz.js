@@ -12,3 +12,5 @@ export default function fizzbuzz(num) {
 
   return infoString;
 };
+
+export const fizzbuzzAnswer = fizzbuzz(20) || '請輸入一個數字';

@@ -1,5 +1,5 @@
-import FizzBuzz from './fizzbuzz';
-import harmlessRandomNote from './harmlessRandomNote';
+import { fizzbuzzAnswer } from './fizzbuzz';
+import { ransomNoteAnswer } from './harmlessRansomNote';
 import isPalindrome from './isPalindrome';
 import caesarCipher from './caesarCipher';
 import reverseWord from './reverseWord';
@@ -9,6 +9,7 @@ import twoSum from './twosum';
 import BinarySearchTree from './binarySearchTree';
 import binarySearch from './binarySearch';
 import {fibonacci, fibMemo} from './fibonacci';
+import factorial from './factorial';
 
 let est = new BinarySearchTree();
 
@@ -31,9 +32,8 @@ console.log(est.toArray());
 console.log(est.toArray().toString());
 
 window.onload = function () {
-  const fizzBuzzInfo = FizzBuzz(20) || '請輸入一個數字';
-  const fizzBuzzBlock = document.getElementById('fizzBuzzBlock');
-  const harmlessRandomNoteBlock = document.getElementById('harmlessRandomNote');
+  const fizzBuzzAnswer = document.getElementsByClassName('fizzBuzz-answer')[0];
+  const harmlessRansomNoteAnswer = document.getElementsByClassName('randomNote-answer')[0];
   const ispalindromeBlock = document.getElementById('ispalindrome');
   const caesarCipherBlock = document.getElementById('caesarCipher');
   const reversedWordBlock = document.getElementById('reversedWord');
@@ -60,8 +60,8 @@ window.onload = function () {
     caesarCipher('Javascript', -900)
   ];
 
-  fizzBuzzBlock.innerHTML = '<h2>FizzBuzzBlock</h2>' + fizzBuzzInfo;
-  harmlessRandomNoteBlock.innerHTML = '<h2>HarmlessRandomNote</h2>' + harmlessRandomNote('this is this', 'this is the text of the note');
+  fizzBuzzAnswer.innerHTML = fizzbuzzAnswer;
+  harmlessRansomNoteAnswer.innerHTML = ransomNoteAnswer;
   ispalindromeBlock.innerHTML = '<h2>IsPalindrome</h2>' + isPalindrome("Madam I'm Adam");
   caesarCipherBlock.innerHTML = '<h2>CaesarCipher</h2>' + caesarCipherArr.join('<br>');
   reversedWordBlock.innerHTML = '<h2>Reverse Word</h2>' + origin + ':<br>' + reversed;
@@ -78,4 +78,5 @@ window.onload = function () {
   'result: ' + binarySearch(binarySearchArr, binarySearchKey);
   console.log(fibonacci(12));
   console.log(fibMemo(8));
+  console.log(factorial(10));
 };
