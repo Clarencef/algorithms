@@ -10,6 +10,7 @@ import BinarySearchTree from './binarySearchTree';
 import binarySearch from './binarySearch';
 import {fibonacci, fibMemo} from './fibonacci';
 import factorial from './factorial';
+import largestBinaryGap from './largestBinaryGap';
 
 let est = new BinarySearchTree();
 
@@ -41,6 +42,7 @@ window.onload = function () {
   const meanMedianModeBlock = document.getElementById('meanMedianMode');
   const twoSumBlock = document.getElementById('twoSum');
   const binarysearchBlock = document.getElementById('binarysearch');
+  const largestBinaryGapBlock = document.getElementById('largestBinaryGap');
   const meanMedianModeArr = [32, 4, 2, 5, 44, 55, 55, 4, 1, 46];
   const twoSumArr = [40, 11, 19, 17, -12];
   const binarySearchArr = [1, 3, 5, 7, 9, 11, 45, 55, 65, 77, 89];
@@ -76,6 +78,8 @@ window.onload = function () {
   'result: [' + twoSumResult.join(', ') + ']';
   binarysearchBlock.innerHTML = '<h2>binary search</h2>' + 'Array: [' + binarySearchArr.join(', ') + '] <br/>' +
   'result: ' + binarySearch(binarySearchArr, binarySearchKey);
+  largestBinaryGapBlock.innerHTML = '<h2>largestBinaryGap</h2>' + 'num: 1028 <br/>'+
+  'result: ' + largestBinaryGap(1028);
   console.log(fibonacci(12));
   console.log(fibMemo(8));
   console.log(factorial(10));
